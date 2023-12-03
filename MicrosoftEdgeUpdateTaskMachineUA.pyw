@@ -13,6 +13,7 @@ import getpass
 import shutil
 import platform
 import subprocess
+import PIL
 from pydoc import help
 from zipfile import ZipFile
 import traceback
