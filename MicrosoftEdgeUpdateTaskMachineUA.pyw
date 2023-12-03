@@ -461,19 +461,7 @@ def pyshell(command: str) -> Tuple[str, str]:
     return redirected_output.getvalue(), error
     
 
-def screenshot() -> Union[bool, bytes]:
-    """ Take a screenshot """
-    try:
-        with BytesIO() as output:
-            img = pyscreeze.screenshot()
-            img.save(output, format='PNG')
-            content = output.getvalue()
-    except Exception as error:
-        logging.error('Error taking screenshot: %s' % errors(error))
-        return False, errors(error).encode()
-    else:
-        logging.info('Captured screenshot')
-        return True, content
+
 
 
 def download(link: str, filename: str) -> Union[str, None]:
